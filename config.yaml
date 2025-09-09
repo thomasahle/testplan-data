@@ -51,18 +51,40 @@ switching:
       version: "2018"
       standard: "IEEE 802.1AE"
       description: "Media Access Control Security"
+      pages: 239
     
     - name: "IEEE 802.1X-2020"
       file: "specs/switching/IEEE_802.1X-2020.pdf"
       version: "2020"
       standard: "IEEE 802.1X"
       description: "Port-Based Network Access Control"
+      pages: 289
     
     - name: "IEEE 802.1Q-2022 (Preview)"
       file: "specs/switching/IEEE_802.1Q-2022_Preview.pdf"
       version: "2022"
       standard: "IEEE 802.1Q"
       description: "Bridges and Virtual LANs (Preview version)"
+      pages: 90
+  
+  test_plans:
+    - name: "802.1X Supplicant Conformance"
+      file: "test-plans/ethernet-switching/802.1X_Supplicant_Conformance.pdf"
+      version: "N/A"
+      description: "802.1X supplicant conformance testing"
+      pages: 68
+    
+    - name: "VLAN Conformance"
+      file: "test-plans/ethernet-switching/VLAN_Conformance.pdf"
+      version: "N/A"
+      description: "Virtual LAN conformance testing"
+      pages: 34
+    
+    - name: "MACsec Conformance"
+      file: "test-plans/ethernet-switching/MACsec_Conformance.pdf"
+      version: "N/A"
+      description: "Media Access Control Security conformance testing"
+      pages: 37
 
 fibre_channel:
   category: "storage"
@@ -72,21 +94,25 @@ fibre_channel:
       file: "test-plans/fibre-channel/FC-PI-4_Clause_6_Optical_v1.0.pdf"
       version: "1.0"
       description: "Fibre Channel Physical Interface optical tests"
+      pages: 21
     
     - name: "FC-PI-5 Clause 6 Optical"
       file: "test-plans/fibre-channel/FC-PI-5_Clause_6_Optical_v2.0.pdf"
       version: "2.0"
       description: "Fibre Channel Physical Interface optical tests (Gen 5)"
+      pages: 24
     
     - name: "Fabric Build Interoperability"
       file: "test-plans/fibre-channel/Fabric_Build_Interop_v2.11.pdf"
       version: "2.11"
       description: "Fibre Channel fabric build interoperability tests"
+      pages: 22
     
     - name: "VN2VN Port Test"
       file: "test-plans/fibre-channel/VN2VN_Port_Test_v1.0.pdf"
       version: "1.0"
       description: "Virtual Node to Virtual Node port testing"
+      pages: 22
 
 ieee1588:
   category: "networking"
@@ -96,16 +122,19 @@ ieee1588:
       file: "test-plans/ieee1588/1588_Port_Latency_v1.0.0.pdf"
       version: "1.0.0"
       description: "Port latency measurements for IEEE 1588"
+      pages: 22
     
     - name: "Default PTP Profile Conformance"
       file: "test-plans/ieee1588/Default_PTP_Profile_Conformance_v0.0.2.pdf"
       version: "0.0.2"
       description: "Default Precision Time Protocol profile conformance"
+      pages: 90
     
     - name: "Power Profile Test Plan"
       file: "test-plans/ieee1588/Power_Profile_Test_Plan.pdf"
       version: "N/A"
       description: "Power profile test plan for IEEE 1588"
+      pages: 189
 
 ipv6:
   category: "networking"
@@ -482,18 +511,21 @@ storage:
       version: "1.01 r1.10"
       organization: "Trusted Computing Group"
       description: "Test cases for Opal/Pyrite/Ruby Self-Encrypting Drive specifications"
+      pages: 94
     
     - name: "SNIA Solid-State Storage Performance Test Specification"
       file: "testplans/SNIA-SSS-PTS-Enterprise-v1.0.pdf"
       version: "1.0"
       organization: "SNIA"
       description: "Performance testing methodology for client/enterprise SSDs"
+      pages: 42
     
     - name: "SATA Interoperability Unified Test Document"
       file: "testplans/SATA_IO_UTD_1_6_Rev1_1.pdf"
       version: "1.6 Rev 1.1"
       organization: "SATA-IO"
       description: "Serial ATA interoperability unified test document"
+      pages: 130
 
 usb:
   test_plans:
