@@ -1,0 +1,741 @@
+---
+# Test Plan Data Configuration
+# This file catalogs all available specifications and test plans in the repository
+
+version: "1.0"
+last_updated: "2025-09-09"
+description: "Repository containing various technology specifications and test plans"
+
+ethernet:
+  category: "networking"
+  description: "Ethernet standards and test plans"
+  specs:
+    - name: "IEEE 802.3bz-2016 (2.5G/5GBASE-T)"
+      file: "Available via IEEE Get Program"
+      version: "2016"
+      standard: "IEEE 802.3bz"
+      description: "2.5 and 5 Gigabit Ethernet over twisted pair - Free download via IEEE Get Program"
+      url: "https://standards.ieee.org/ieee/802.3bz/6130/"
+      pages: "N/A (external document)"
+  
+  test_plans:
+    - name: "1000BASE-T PMA Test Suite"
+      file: "testplans/ethernet/1000BASE-T_PMA_Test_Suite_v2.6.pdf"
+      version: "2.6"
+      description: "Physical Medium Attachment test suite for Gigabit Ethernet"
+      pages: 83
+    
+    - name: "2.5G/5G PMA Test Plan"
+      file: "testplans/ethernet/2.5G_5G_PMA_Test_Plan_v1.4.pdf"
+      version: "1.4"
+      description: "Physical Medium Attachment test plan for 2.5G and 5G Ethernet"
+      pages: 24
+    
+    - name: "Ethernet Interoperability"
+      file: "testplans/ethernet/Ethernet_Interoperability_v3.0.pdf"
+      version: "3.0"
+      description: "Ethernet interoperability test suite"
+      pages: 43
+    
+    - name: "PoDL PSE Conformance"
+      file: "testplans/ethernet/PoDL_PSE_Conformance_v2.4.pdf"
+      version: "2.4"
+      description: "Power over Data Lines Power Sourcing Equipment conformance"
+      pages: 52
+
+switching:
+  category: "networking"
+  description: "Network switching and security standards"
+  specs:
+    - name: "IEEE 802.1AE-2018 (MACsec)"
+      file: "specs/switching/IEEE_802.1AE-2018_MACsec.pdf"
+      version: "2018"
+      standard: "IEEE 802.1AE"
+      description: "Media Access Control Security"
+      pages: 239
+    
+    - name: "IEEE 802.1X-2020"
+      file: "specs/switching/IEEE_802.1X-2020.pdf"
+      version: "2020"
+      standard: "IEEE 802.1X"
+      description: "Port-Based Network Access Control"
+      pages: 289
+    
+    - name: "IEEE 802.1Q-2022 (Preview)"
+      file: "specs/switching/IEEE_802.1Q-2022_Preview.pdf"
+      version: "2022"
+      standard: "IEEE 802.1Q"
+      description: "Bridges and Virtual LANs (Preview version)"
+      pages: 90
+  
+  test_plans:
+    - name: "802.1X Supplicant Conformance"
+      file: "testplans/switching/802.1X_Supplicant_Conformance.pdf"
+      version: "N/A"
+      description: "802.1X supplicant conformance testing"
+      pages: 68
+    
+    - name: "VLAN Conformance"
+      file: "testplans/switching/VLAN_Conformance.pdf"
+      version: "N/A"
+      description: "Virtual LAN conformance testing"
+      pages: 34
+    
+    - name: "MACsec Conformance"
+      file: "testplans/switching/MACsec_Conformance.pdf"
+      version: "N/A"
+      description: "Media Access Control Security conformance testing"
+      pages: 37
+
+fibre_channel:
+  category: "storage"
+  description: "Fibre Channel standards and test plans"
+  test_plans:
+    - name: "FC-PI-4 Clause 6 Optical"
+      file: "testplans/fibre-channel/FC-PI-4_Clause_6_Optical_v1.0.pdf"
+      version: "1.0"
+      description: "Fibre Channel Physical Interface optical tests"
+      pages: 21
+    
+    - name: "FC-PI-5 Clause 6 Optical"
+      file: "testplans/fibre-channel/FC-PI-5_Clause_6_Optical_v2.0.pdf"
+      version: "2.0"
+      description: "Fibre Channel Physical Interface optical tests (Gen 5)"
+      pages: 24
+    
+    - name: "Fabric Build Interoperability"
+      file: "testplans/fibre-channel/Fabric_Build_Interop_v2.11.pdf"
+      version: "2.11"
+      description: "Fibre Channel fabric build interoperability tests"
+      pages: 22
+    
+    - name: "VN2VN Port Test"
+      file: "testplans/fibre-channel/VN2VN_Port_Test_v1.0.pdf"
+      version: "1.0"
+      description: "Virtual Node to Virtual Node port testing"
+      pages: 22
+
+ieee1588:
+  category: "networking"
+  description: "IEEE 1588 Precision Time Protocol test plans"
+  test_plans:
+    - name: "1588 Port Latency"
+      file: "testplans/ieee1588/1588_Port_Latency_v1.0.0.pdf"
+      version: "1.0.0"
+      description: "Port latency measurements for IEEE 1588"
+      pages: 22
+    
+    - name: "Default PTP Profile Conformance"
+      file: "testplans/ieee1588/Default_PTP_Profile_Conformance_v0.0.2.pdf"
+      version: "0.0.2"
+      description: "Default Precision Time Protocol profile conformance"
+      pages: 90
+    
+    - name: "Power Profile Test Plan"
+      file: "testplans/ieee1588/Power_Profile_Test_Plan.pdf"
+      version: "N/A"
+      description: "Power profile test plan for IEEE 1588"
+      pages: 189
+
+ipv6:
+  category: "networking"
+  description: "IPv6 protocol conformance test plans and specifications"
+  specs:
+    - name: "RFC 8200 - IPv6 Specification"
+      file: "specs/ipv6/RFC8200_IPv6_Specification.txt"
+      version: "RFC 8200"
+      standard: "IETF RFC"
+      description: "Internet Protocol, Version 6 (IPv6) Specification"
+    
+    - name: "RFC 4861 - IPv6 Neighbor Discovery"
+      file: "specs/ipv6/RFC4861_IPv6_Neighbor_Discovery.txt"
+      version: "RFC 4861"
+      standard: "IETF RFC"
+      description: "Neighbor Discovery for IP version 6 (IPv6)"
+    
+    - name: "RFC 4862 - IPv6 SLAAC"
+      file: "specs/ipv6/RFC4862_IPv6_SLAAC.txt"
+      version: "RFC 4862"
+      standard: "IETF RFC"
+      description: "IPv6 Stateless Address Autoconfiguration"
+    
+    - name: "RFC 8415 - DHCPv6"
+      file: "specs/ipv6/RFC8415_DHCPv6.txt"
+      version: "RFC 8415"
+      standard: "IETF RFC"
+      description: "Dynamic Host Configuration Protocol for IPv6 (DHCPv6)"
+  
+  test_plans:
+    - name: "DHCPv6 Conformance"
+      file: "testplans/ipv6/DHCPv6_Conformance.pdf"
+      version: "N/A"
+      description: "Dynamic Host Configuration Protocol for IPv6 conformance"
+    
+    - name: "IPv6 Address Architecture Conformance"
+      file: "testplans/ipv6/IPv6_Address_Architecture_Conformance.pdf"
+      version: "N/A"
+      description: "IPv6 address architecture conformance testing"
+    
+    - name: "IPv6 Core Protocols Conformance"
+      file: "testplans/ipv6/IPv6_Core_Protocols_Conformance_v5.0.0.pdf"
+      version: "5.0.0"
+      description: "IPv6 core protocols conformance test suite"
+    
+    - name: "IPv6 Only Functional Test"
+      file: "testplans/ipv6/IPv6_Only_Functional_Test.pdf"
+      version: "N/A"
+      description: "IPv6-only network functional testing"
+
+iscsi:
+  category: "storage"
+  description: "iSCSI protocol specifications and test plans"
+  specs:
+    - name: "RFC 7143 - iSCSI Protocol (TXT)"
+      file: "specs/iscsi/RFC7143_iSCSI_Protocol.txt"
+      version: "RFC 7143"
+      standard: "IETF RFC"
+      description: "Internet Small Computer System Interface (iSCSI) Protocol (Consolidated)"
+    
+    - name: "RFC 7143 - iSCSI Protocol (PDF)"
+      file: "specs/iscsi/RFC7143_iSCSI_Protocol.pdf"
+      version: "RFC 7143"
+      standard: "IETF RFC"
+      description: "Internet Small Computer System Interface (iSCSI) Protocol (PDF version)"
+    
+    - name: "RFC 7144 - iSCSI SAM"
+      file: "specs/iscsi/RFC7144_iSCSI_SAM.txt"
+      version: "RFC 7144"
+      standard: "IETF RFC"
+      description: "Internet Small Computer System Interface (iSCSI) SCSI Features Update"
+    
+    - name: "RFC 7145 - iSER RDMA"
+      file: "specs/iscsi/RFC7145_iSER_RDMA.txt"
+      version: "RFC 7145"
+      standard: "IETF RFC"
+      description: "Internet Small Computer System Interface (iSCSI) Extensions for RDMA (iSER)"
+  
+  test_plans:
+    - name: "Initiator Full Feature Phase"
+      file: "testplans/iscsi/Initiator_Full_Feature_Phase.pdf"
+      version: "N/A"
+      description: "iSCSI initiator full feature phase testing"
+    
+    - name: "Target Login Phase"
+      file: "testplans/iscsi/Target_Login_Phase_v1.1.pdf"
+      version: "1.1"
+      description: "iSCSI target login phase testing"
+
+storage:
+  category: "storage"
+  description: "Storage device security and performance standards"
+  specs:
+    - name: "TCG Opal SSC v2.02 r1.00"
+      file: "specs/storage/TCG_Opal_SSC_v2.02_r1.00.pdf"
+      version: "v2.02 r1.00"
+      standard: "TCG"
+      description: "TCG Storage Security Subsystem Class: Opal (Self-Encrypting Drives)"
+    
+    - name: "SNIA SSS-PTS v2.0.2"
+      file: "specs/storage/SNIA_SSS_PTS_v2.0.2.pdf"
+      version: "v2.0.2"
+      standard: "SNIA"
+      description: "Solid State Storage Performance Test Specification"
+  
+  test_plans:
+    - name: "TCG Storage Opal Family Test Cases"
+      file: "testplans/TCG_Storage_Opal_Family_Test_Cases_v1_01_r1_10_pub.pdf"
+      version: "1.01 r1.10"
+      organization: "Trusted Computing Group"
+      description: "Test cases for Opal/Pyrite/Ruby Self-Encrypting Drive specifications"
+      pages: 94
+    
+    - name: "SNIA Solid-State Storage Performance Test Specification"
+      file: "testplans/SNIA-SSS-PTS-Enterprise-v1.0.pdf"
+      version: "1.0"
+      organization: "SNIA"
+      description: "Performance testing methodology for client/enterprise SSDs"
+      pages: 42
+    
+    - name: "SATA Interoperability Unified Test Document"
+      file: "testplans/SATA_IO_UTD_1_6_Rev1_1.pdf"
+      version: "1.6 Rev 1.1"
+      organization: "SATA-IO"
+      description: "Serial ATA interoperability unified test document"
+      pages: 130
+
+usb:
+  category: "connectivity"
+  description: "USB, Type-C, and Power Delivery standards"
+  specs:
+    - name: "USB Type-C Specification R2.0"
+      file: "specs/usb/USB_Type-C_Spec_R2.0.pdf"
+      version: "R2.0"
+      standard: "USB-IF"
+      description: "USB Type-C Cable and Connector Specification"
+    
+    - name: "USB Power Delivery R3.0 V1.1"
+      file: "specs/usb/USB_PD_R3.0_V1.1.pdf"
+      version: "R3.0 V1.1"
+      standard: "USB-IF"
+      description: "USB Power Delivery Specification"
+
+wifi:
+  category: "wireless"
+  description: "Wi-Fi and 802.11 standards"
+  specs:
+    - name: "IEEE 802.11-2020 (Preview)"
+      file: "specs/wifi/IEEE_802.11-2020_Preview.pdf"
+      version: "2020"
+      standard: "IEEE 802.11"
+      description: "WLAN MAC and PHY specifications (Preview version)"
+
+lorawan:
+  category: "iot"
+  description: "LoRaWAN IoT networking standards"
+  specs:
+    - name: "LoRaWAN L2 v1.0.4"
+      file: "specs/lorawan/LoRaWAN_L2_1.0.4.pdf"
+      version: "v1.0.4"
+      standard: "LoRa Alliance"
+      description: "LoRaWAN Link Layer Specification"
+
+onvif:
+  category: "video"
+  description: "ONVIF IP video standards"
+  specs:
+    - name: "ONVIF Core Specification"
+      file: "specs/onvif/ONVIF_Core_Specification.pdf"
+      version: "N/A"
+      standard: "ONVIF"
+      description: "ONVIF Core Specification for IP video devices"
+
+sdn:
+  category: "networking"
+  description: "Software-Defined Networking standards"
+  specs:
+    - name: "OpenFlow Switch v1.3.5"
+      file: "specs/sdn/OpenFlow_Switch_v1.3.5.pdf"
+      version: "v1.3.5"
+      standard: "ONF"
+      description: "OpenFlow Switch Specification"
+
+redfish:
+  category: "management"
+  description: "Data center management standards"
+  specs:
+    - name: "DMTF Redfish DSP0266 v1.20.1"
+      file: "specs/redfish/DMTF_Redfish_DSP0266_v1.20.1.pdf"
+      version: "v1.20.1"
+      standard: "DMTF"
+      description: "Redfish Specification for data center management"
+
+auth:
+  category: "security"
+  description: "Authentication and authorization standards"
+  specs:
+    - name: "OAuth 2.0 - RFC 6749"
+      file: "specs/auth/OAuth_2.0_RFC6749.txt"
+      version: "RFC 6749"
+      standard: "IETF RFC"
+      description: "OAuth 2.0 Authorization Framework"
+
+rdma:
+  category: "networking"
+  description: "Remote Direct Memory Access standards"
+  specs:
+    - name: "RFC 5040 - RDMAP"
+      file: "specs/rdma/RFC5040_RDMAP.txt"
+      version: "RFC 5040"
+      standard: "IETF RFC"
+      description: "A Remote Direct Memory Access Protocol Specification"
+    
+    - name: "RFC 5041 - DDP"
+      file: "specs/rdma/RFC5041_DDP.txt"
+      version: "RFC 5041"
+      standard: "IETF RFC"
+      description: "Direct Data Placement over Reliable Transports"
+    
+    - name: "RFC 5044 - MPA"
+      file: "specs/rdma/RFC5044_MPA.txt"
+      version: "RFC 5044"
+      standard: "IETF RFC"
+      description: "Marker PDU Aligned Framing for TCP Specification"
+
+ptp:
+  category: "networking"
+  description: "Precision Time Protocol standards"
+  specs:
+    - name: "IEEE 1588-2019 Changes"
+      file: "specs/ptp-profiles/IEEE_1588-2019_changes.pdf"
+      version: "2019"
+      standard: "IEEE 1588"
+      description: "Summary of changes in IEEE 1588-2019 compared to 2008 edition"
+
+nvme:
+  category: "storage"
+  description: "NVMe (Non-Volatile Memory Express) specifications and conformance test plans"
+  
+  # Core Command Sets
+  nvm_command_set:
+    description: "Basic NVM Command Set for read/write operations"
+    spec:
+      - name: "NVM Command Set Specification Rev 1.2"
+        file: "specs/nvme/NVM-Express-NVM-Command-Set-Specification-Revision-1.2-2025.08.01-Ratified.pdf"
+        version: "1.2"
+        standard: "NVM Express"
+        description: "NVM Command Set specification for NVMe devices"
+        pages: 158
+        ratified: "2025-08-01"
+    test_plans:
+      # Note: Main NVM Command Set conformance test plan is the 496-page plan mentioned by user but not yet downloaded
+  
+  zns_command_set:
+    description: "Zoned Namespace Command Set for zone-aware storage"
+    spec:
+      - name: "Zoned Namespace Command Set Specification Rev 1.4"
+        file: "specs/nvme/NVM-Express-Zoned-Namespace-Command-Set-Specification-Revision-1.4-2025.08.01-Ratified.pdf"
+        version: "1.4"
+        standard: "NVM Express"
+        description: "Zoned Namespace Command Set specification for zone-aware storage"
+        pages: 59
+        ratified: "2025-08-01"
+    test_plans:
+      - name: "NVMe ZNS Command Set Conformance"
+        file: "testplans/UNH-IOL_NVMe_ZNS_Command_Set_Conformance_v23.0_2025.01.19.pdf"
+        version: "23.0"
+        organization: "UNH-IOL"
+        last_updated: "2025-01-19"
+        pages: 148
+        description: "NVMe Zoned Namespace Command Set conformance test plan"
+  
+  slm_command_set:
+    description: "Subsystem Local Memory Command Set"
+    spec:
+      - name: "Subsystem Local Memory Command Set Specification Rev 1.2"
+        file: "specs/nvme/NVM-Express-Subsystem-Local-Memory-Command-Set-Specification-Revision-1.2-2025.08.01-Ratified.pdf"
+        version: "1.2"
+        standard: "NVM Express"
+        description: "Subsystem Local Memory Command Set specification"
+        pages: 27
+        ratified: "2025-08-01"
+    test_plans:
+      - name: "NVMe Subsystem Local Memory (SLM) Command Set Conformance"
+        file: "testplans/UNH-IOL_Subsystem_Local_Memory_Conformance_v23.0_2025.01.19.pdf"
+        version: "23.0"
+        organization: "UNH-IOL"
+        last_updated: "2025-01-19"
+        pages: 35
+        description: "NVMe Subsystem Local Memory Command Set conformance test plan"
+  
+  cps_command_set:
+    description: "Computational Programs Command Set for in-storage computing"
+    spec:
+      - name: "Computational Programs Command Set Specification Rev 1.2"
+        file: "specs/nvme/NVM-Express-Computational-Programs-Command-Set-Specification-Revision-1.2-2025.08.01-Ratified.pdf"
+        version: "1.2"
+        standard: "NVM Express"
+        description: "Computational Programs Command Set specification for in-storage computing"
+        pages: 40
+        ratified: "2025-08-01"
+    test_plans:
+      - name: "NVMe Computational Programs (CPS) Command Set Conformance"
+        file: "testplans/UNH-IOL_Computational_Programs_Conformance_v23.0_2025.01.19.pdf"
+        version: "23.0"
+        organization: "UNH-IOL"
+        last_updated: "2025-01-19"
+        pages: 44
+        description: "NVMe Computational Programs Command Set conformance test plan"
+  
+  # Management Interface
+  management_interface:
+    description: "NVMe Management Interface for out-of-band management"
+    spec:
+      - name: "NVMe-MI Specification Rev 2.1"
+        file: "specs/nvme/NVM-Express-Management-Interface-Specification-Revision-2.1-2025.08.01-Ratified.pdf"
+        version: "2.1"
+        standard: "NVM Express"
+        description: "NVMe Management Interface specification for out-of-band management"
+        pages: 210
+        ratified: "2025-08-01"
+    test_plans:
+      - name: "NVMe-MI Conformance"
+        file: "testplans/UNH-IOL_NVMe-MI_Conformance_v23.0_2025.01.19.pdf"
+        version: "23.0"
+        organization: "UNH-IOL"
+        last_updated: "2025-01-19"
+        pages: 166
+        description: "NVMe Management Interface conformance test plan"
+  
+  # Transport Bindings
+  pcie_transport:
+    description: "NVMe over PCIe transport binding"
+    spec:
+      - name: "NVMe over PCIe Transport Specification Rev 1.3"
+        file: "specs/nvme/NVM-Express-NVMe-over-PCIe-Transport-Specification-Revision-1.3-2025.08.01-Ratified.pdf"
+        version: "1.3"
+        standard: "NVM Express"
+        description: "NVMe over PCIe transport binding specification"
+        pages: 44
+        ratified: "2025-08-01"
+    test_plans:
+      - name: "NVMe PCIe Transport Conformance"
+        file: "testplans/UNH-IOL_PCIe_Transport_Conformance_v23.0_2025.01.19.pdf"
+        version: "23.0"
+        organization: "UNH-IOL"
+        last_updated: "2025-01-19"
+        pages: 35
+        description: "NVMe PCIe Transport conformance test plan"
+      - name: "NVMe PCIe Interoperability"
+        file: "testplans/UNH-IOL_NVMe-PCIe_Interoperability_v23.0_2025.01.19.pdf"
+        version: "23.0"
+        organization: "UNH-IOL"
+        last_updated: "2025-01-19"
+        pages: 37
+        description: "NVMe PCIe interoperability test suite"
+  
+  fabrics_transport:
+    description: "NVMe over Fabrics transport bindings (RDMA/TCP)"
+    spec:
+      - name: "NVMe over Fabrics Specification Rev 1.1a"
+        file: "specs/nvme/NVMe-over-Fabrics-1.1a-2021.07.12-Ratified.pdf"
+        version: "1.1a"
+        standard: "NVM Express"
+        description: "NVMe over Fabrics specification for fabric transport bindings"
+        pages: 84
+        ratified: "2021-07-12"
+    test_plans:
+      - name: "NVMe RDMA Transport Conformance"
+        file: "testplans/UNH-IOL_RDMA_Transport_Conformance_v23.0_2025.01.19.pdf"
+        version: "23.0"
+        organization: "UNH-IOL"
+        last_updated: "2025-01-19"
+        pages: 42
+        description: "NVMe RDMA Transport conformance test plan"
+      - name: "NVMe TCP Transport Conformance"
+        file: "testplans/UNH-IOL_TCP_Transport_Conformance_v23.0_2025.01.19.pdf"
+        version: "23.0"
+        organization: "UNH-IOL"
+        last_updated: "2025-01-19"
+        pages: 71
+        description: "NVMe TCP Transport conformance test plan"
+      - name: "NVMe-oF (RDMA/TCP) Interoperability"
+        file: "testplans/UNH-IOL_NVMe_RDMA_TCP_Interoperability_v22.0_2024.07.28.pdf"
+        version: "22.0"
+        organization: "UNH-IOL"
+        last_updated: "2024-07-28"
+        pages: 19
+        description: "NVMe over Fabrics (RDMA/TCP) interoperability test suite"
+
+
+usb:
+  test_plans:
+    - name: "USB Type-C Connectors & Cable Assemblies Compliance"
+      file: "testplans/USB_Type-C_Compliance_Document_Rev_2_1b_June_2021.pdf"
+      version: "Rev 2.1b"
+      organization: "USB-IF"
+      description: "Mechanical/electrical compliance document for USB Type-C"
+      pages: 86
+    
+    - name: "USB Type-C Functional Test Specification"
+      file: "testplans/USB_Type_C_Functional_Test_Specification_2021_05_20.pdf"
+      version: "2021-05-20"
+      organization: "USB-IF"
+      description: "Functional test procedures for USB Type-C"
+      pages: 132
+    
+    - name: "USB Power Delivery Compliance Test Specification"
+      file: "testplans/USB_PD3_CTS_r1.4_V5_OR.pdf"
+      version: "PD3 CTS r1.4 V5"
+      organization: "USB-IF"
+      description: "Official Power Delivery conformance test plan"
+      pages: 301
+
+wifi:
+  test_plans:
+    - name: "Wi-Fi Residential & SOHO Performance Testing"
+      file: "testplans/TR-398-3-0-1_Wi-Fi_Performance_Testing.pdf"
+      version: "TR-398 Issue 3.0.1"
+      organization: "Broadband Forum"
+      description: "Wi-Fi performance testing for residential and small office environments"
+      pages: 90
+    
+    - name: "802.11 Wireless Interoperability"
+      file: "testplans/wifi/802.11_Wireless_Interoperability.pdf"
+      version: "N/A"
+      organization: "N/A"
+      description: "802.11 wireless interoperability test plan"
+      pages: 25
+    
+    - name: "WPA2 STA MAC Conformance"
+      file: "testplans/wifi/WPA2_STA_MAC_Conformance_v2.4.pdf"
+      version: "2.4"
+      organization: "N/A"
+      description: "WPA2 Station MAC conformance test plan"
+      pages: 52
+
+lorawan:
+  test_plans:
+    - name: "LoRaWAN Certification Protocol Specification"
+      file: "testplans/TS009-LoRaWAN_Certification_Protocol_v1.0.0.pdf"
+      version: "TS009-1.0.0"
+      organization: "LoRa Alliance"
+      description: "Test harness protocol and certification flow for LoRaWAN"
+      pages: 20
+    
+    - name: "LoRaWAN 1.0.4 End Device Certification"
+      file: "testplans/LW1.0.4_End_Device_Certification_V1.0.pdf"
+      version: "1.0"
+      organization: "LoRa Alliance"
+      description: "End device certification requirements for LoRaWAN 1.0.4"
+      pages: 162
+
+onvif:
+  test_plans:
+    - name: "ONVIF Profiles Conformance Device Test Specification"
+      file: "testplans/ONVIF_Profiles_Conformance_Device_Test_Specification_20.12.pdf"
+      version: "20.12"
+      organization: "ONVIF"
+      description: "Device test procedures for ONVIF profile conformance"
+    
+    - name: "ONVIF Conformance Process Specification"
+      file: "testplans/ONVIF-Conformance-Process-Specification-v5-4.pdf"
+      version: "5.4"
+      organization: "ONVIF"
+      description: "Process specification for ONVIF conformance testing"
+    
+    - name: "ONVIF Access Policy Device Test Specification"
+      file: "testplans/ONVIF_Access_Policy_Device_Test_Specification_21.06.pdf"
+      version: "21.06"
+      organization: "ONVIF"
+      description: "Device test specification for ONVIF access policy"
+
+sdn:
+  test_plans:
+    - name: "ONF OpenFlow 1.3.4 Test Specification"
+      file: "testplans/OpenFlow1.3.4TestSpecification-Basic.pdf"
+      version: "ONF TS-026 1.0"
+      organization: "Open Networking Foundation"
+      description: "OpenFlow switch conformance test specification"
+
+redfish:
+  test_plans:
+    - name: "DMTF Redfish Conformance & Test Tools White Paper"
+      file: "testplans/DSP2068_1.0.0_0.pdf"
+      version: "DSP2068 1.0.0"
+      organization: "DMTF"
+      description: "Official validator tools and usage for Redfish conformance"
+    
+    - name: "Redfish Conformance Test Suite Guidance"
+      file: "testplans/DSP-IS0018_1.0.0.pdf"
+      version: "DSP-IS0018 1.0.0"
+      organization: "DMTF"
+      description: "Guidance for protocol, interop, and use-case checkers"
+
+# New categories for additional test plans
+ethernet_poe:
+  category: "networking"
+  description: "Ethernet Power over Ethernet test specifications"
+  test_plans:
+    - name: "Ethernet Alliance PoE Certification Test Plan"
+      file: "testplans/EA_PoE_Certification_Test_Plan.pdf"
+      version: "Gen1/Gen2"
+      organization: "Ethernet Alliance"
+      description: "Power over Ethernet certification test plan based on IEEE 802.3af/at/bt"
+      pages: 72
+
+automotive_ethernet:
+  category: "automotive"
+  description: "OPEN Alliance automotive ethernet test specifications"
+  test_plans:
+    - name: "Automotive Ethernet ECU Test Specification Layer 1 100BASE-T1"
+      file: "testplans/OA_Automotive_Ethernet_ECU_TestSpecification_Layer_1_100BASE-T1_v3.0.pdf"
+      version: "3.0"
+      organization: "OPEN Alliance"
+      description: "ECU test specification for Layer 1 100BASE-T1 automotive ethernet"
+      pages: 29
+    
+    - name: "Automotive Ethernet ECU Test Specification Layer 3-7"
+      file: "testplans/OA_Automotive_Ethernet_ECU_TestSpecification_Layer_3-7_v3.0.pdf"
+      version: "3.0"
+      organization: "OPEN Alliance"
+      description: "ECU test specification for Layer 3-7 automotive ethernet"
+      pages: 664
+
+khronos:
+  category: "graphics"
+  description: "Khronos Group conformance specifications"
+  test_plans:
+    - name: "Khronos Group Conformance Process"
+      file: "testplans/conformance_procedures.pdf"
+      version: "N/A"
+      organization: "Khronos Group"
+      description: "Conformance process for Vulkan/OpenGL/EGL and other Khronos APIs"
+
+fips_security:
+  category: "security"
+  description: "FIPS 140-3 and security certification test specifications"
+  test_plans:
+    - name: "NIST SP 800-140 FIPS 140-3 Derived Test Requirements"
+      file: "testplans/NIST_SP_800-140_DTR.pdf"
+      version: "SP 800-140"
+      organization: "NIST"
+      description: "Test requirements used by CMVP labs for FIPS 140-3"
+      pages: 23
+    
+    - name: "FIPS 140-3 Implementation Guidance"
+      file: "testplans/FIPS_140-3_IG.pdf"
+      version: "N/A"
+      organization: "NIST"
+      description: "Implementation guidance for FIPS 140-3 test assessment"
+    
+    - name: "Common Criteria Network Device Evaluation Activities"
+      file: "testplans/ND_supporting_doc.pdf"
+      version: "N/A"
+      organization: "Common Criteria Portal"
+      description: "Evaluator test activities for Network Device cPP"
+
+ipv6_ready:
+  category: "networking"
+  description: "IPv6 Ready conformance test specifications"
+  test_plans:
+    - name: "IPv6 Ready Core Protocols Conformance"
+      file: "testplans/IPv6_Ready_Core_Conformance.pdf"
+      version: "N/A"
+      organization: "IPv6 Ready"
+      description: "Core protocols conformance test specification for IPv6"
+    
+    - name: "NIST USGv6 Test Methods"
+      file: "testplans/NIST.SP.500-281Br1.pdf"
+      version: "SP 500-281Br1"
+      organization: "NIST"
+      description: "USGv6 test methods for IPv6 product validation"
+
+pcie_storage:
+  category: "connectivity"
+  description: "PCIe and storage interface test specifications"
+  test_plans:
+    - name: "Keysight D9050PCIC PCIe Gen5 Methods of Implementation"
+      file: "Available from Keysight (requires registration)"
+      version: "Latest"
+      organization: "Keysight"
+      description: "Methods of Implementation for D9050PCIC PCIe Gen5 compliance test software"
+      url: "https://www.keysight.com/us/en/assets/9922-01254/reference-guides/D9050PCIC-PCIeGen5-Test-Software-MOI-latest.pdf"
+      pages: "N/A (external document)"
+    
+    - name: "Protocol Insight UFS Methods of Implementation"
+      file: "testplans/Protocol_Insight_UFS_MOI_v2.21.pdf"
+      version: "2.21"
+      organization: "Protocol Insight"
+      description: "Methods of Implementation for UFS protocol testing"
+
+# Summary statistics
+stats:
+  total_files: 87
+  devices: 20
+  specs: 26
+  test_plans: 61
+
+# File organization
+directories:
+  specs: "Specification documents organized by technology"
+  testplans: "Test plans organized by technology category"
