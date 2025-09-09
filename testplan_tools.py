@@ -1,25 +1,20 @@
 #!/usr/bin/env python3
 """
-Validation script for config.yaml test plan repository.
+Test Plan Repository Management Tool
 
-This script validates that:
-1. All files referenced in config.yaml exist
-2. PDF files have the expected number of pages
-3. File paths are correctly formatted
-4. No broken references exist
+A tool for validating the test plan repository configuration file (config.yaml).
+Validates that all referenced files exist and checks PDF page counts.
 
 Usage:
-    python validate_config.py [--fix-pages] [--verbose]
-    
-Options:
-    --fix-pages    Update config.yaml with actual page counts for mismatches
-    --verbose      Show detailed output for all checks
+    python testplan_tools.py [--fix-pages] [--verbose]
+    python testplan_tools.py --help
 """
 
 import yaml
 import os
 import sys
 import argparse
+import subprocess
 from pathlib import Path
 from typing import Dict, List, Tuple, Any, Optional
 
@@ -29,11 +24,24 @@ try:
 except ImportError:
     PYPDF2_AVAILABLE = False
 
+
+def load_yaml_file(filename: str) -> Dict:
+    """Load a YAML file with error handling."""
+    try:
+        with open(filename, "r") as f:
+            return yaml.safe_load(f)
+    except FileNotFoundError:
+        print(f"ERROR: {filename} file not found!")
+        sys.exit(1)
+    except yaml.YAMLError as e:
+        print(f"ERROR: Invalid YAML in {filename}: {e}")
+        sys.exit(1)
+
+
 def get_pdf_page_count(file_path: str) -> Optional[int]:
     """Get page count of a PDF file."""
     if not PYPDF2_AVAILABLE:
         # Try using pdfinfo command
-        import subprocess
         try:
             result = subprocess.run(['pdfinfo', file_path], 
                                   capture_output=True, text=True, check=True)
@@ -51,6 +59,7 @@ def get_pdf_page_count(file_path: str) -> Optional[int]:
     except Exception as e:
         print(f"Warning: Could not read {file_path}: {e}")
         return None
+
 
 def extract_files_from_config(config: Dict[str, Any]) -> List[Tuple[str, Any, str]]:
     """
@@ -102,7 +111,8 @@ def extract_files_from_config(config: Dict[str, Any]) -> List[Tuple[str, Any, st
     
     return files
 
-def validate_files(files: List[Tuple[str, Any, str]], verbose: bool = False) -> Tuple[List[str], List[str], List[Tuple[str, int, Any]]]:
+
+def validate_config_files(files: List[Tuple[str, Any, str]], verbose: bool = False) -> Tuple[List[str], List[str], List[Tuple[str, int, Any]]]:
     """
     Validate file existence and page counts.
     Returns (missing_files, invalid_files, page_mismatches).
@@ -114,6 +124,16 @@ def validate_files(files: List[Tuple[str, Any, str]], verbose: bool = False) -> 
     for file_path, expected_pages, category in files:
         if verbose:
             print(f"Checking {file_path} ({category})")
+        
+        # Skip external documents
+        if isinstance(file_path, str) and (
+            file_path.startswith("Available") or 
+            "external document" in str(expected_pages) or
+            "requires registration" in file_path.lower()
+        ):
+            if verbose:
+                print(f"  → Skipping external document: {file_path}")
+            continue
         
         # Check if file exists
         if not os.path.exists(file_path):
@@ -166,11 +186,12 @@ def validate_files(files: List[Tuple[str, Any, str]], verbose: bool = False) -> 
     
     return missing_files, invalid_files, page_mismatches
 
-def print_results(missing_files: List[str], invalid_files: List[str], 
-                 page_mismatches: List[Tuple[str, int, Any]], total_files: int):
-    """Print validation results."""
+
+def print_config_results(missing_files: List[str], invalid_files: List[str], 
+                        page_mismatches: List[Tuple[str, int, Any]], total_files: int) -> bool:
+    """Print validation results. Returns True if validation passed."""
     print(f"\n{'='*60}")
-    print(f"VALIDATION RESULTS")
+    print(f"CONFIG VALIDATION RESULTS")
     print(f"{'='*60}")
     print(f"Total files checked: {total_files}")
     
@@ -203,6 +224,7 @@ def print_results(missing_files: List[str], invalid_files: List[str],
     else:
         print(f"\n⚠️  Found {issues} issue(s) that need attention.")
         return False
+
 
 def update_config_with_actual_pages(config_file: str, page_mismatches: List[Tuple[str, int, Any]]) -> bool:
     """Update config.yaml with actual page counts for mismatched files."""
@@ -237,29 +259,113 @@ def update_config_with_actual_pages(config_file: str, page_mismatches: List[Tupl
         print("No updates were made (could not find page count patterns to update)")
         return False
 
+
+def generate_summary_stats(config: Dict[str, Any]) -> None:
+    """Generate and print summary statistics from config."""
+    total_specs = 0
+    total_test_plans = 0
+    total_pages = 0
+    
+    def count_items(section_data: Any):
+        nonlocal total_specs, total_test_plans, total_pages
+        
+        if isinstance(section_data, dict):
+            # Count specs
+            if 'specs' in section_data and section_data['specs'] is not None:
+                for spec in section_data['specs']:
+                    if isinstance(spec, dict):
+                        total_specs += 1
+                        pages = spec.get('pages')
+                        if isinstance(pages, int):
+                            total_pages += pages
+            
+            # Count test_plans
+            if 'test_plans' in section_data and section_data['test_plans'] is not None:
+                for plan in section_data['test_plans']:
+                    if isinstance(plan, dict):
+                        total_test_plans += 1
+                        pages = plan.get('pages')
+                        if isinstance(pages, int):
+                            total_pages += pages
+            
+            # Count spec (single)
+            if 'spec' in section_data and section_data['spec'] is not None:
+                for spec in section_data['spec']:
+                    if isinstance(spec, dict):
+                        total_specs += 1
+                        pages = spec.get('pages')
+                        if isinstance(pages, int):
+                            total_pages += pages
+            
+            # Recurse
+            for key, value in section_data.items():
+                if key not in ['specs', 'test_plans', 'spec', 'category', 'description']:
+                    count_items(value)
+        
+        elif isinstance(section_data, list):
+            for item in section_data:
+                count_items(item)
+    
+    # Process all sections
+    for section_name, section_data in config.items():
+        if section_name not in ['version', 'last_updated', 'description', 'stats', 'directories']:
+            count_items(section_data)
+    
+    print(f"\n📊 REPOSITORY STATISTICS:")
+    print(f"  Total specifications: {total_specs}")
+    print(f"  Total test plans: {total_test_plans}")
+    print(f"  Total documents: {total_specs + total_test_plans}")
+    print(f"  Total pages (where known): {total_pages:,}")
+
+
 def main():
-    parser = argparse.ArgumentParser(description='Validate config.yaml file references and page counts')
-    parser.add_argument('--fix-pages', action='store_true', 
-                       help='Update config.yaml with actual page counts for mismatches')
-    parser.add_argument('--verbose', '-v', action='store_true',
-                       help='Show detailed output for all checks')
-    parser.add_argument('--config', default='config.yaml',
-                       help='Path to config.yaml file (default: config.yaml)')
+    """Main entry point."""
+    parser = argparse.ArgumentParser(
+        description="Test Plan Repository Configuration Validator",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+This tool validates the config.yaml file to ensure:
+  - All referenced files exist
+  - PDF files are valid
+  - Page counts match actual PDF pages (when verifiable)
+
+Examples:
+  python testplan_tools.py                  # Basic validation
+  python testplan_tools.py --verbose        # Show detailed output
+  python testplan_tools.py --fix-pages      # Auto-fix page count mismatches
+        """
+    )
+    
+    parser.add_argument(
+        '--fix-pages', action='store_true',
+        help='Update config.yaml with actual page counts for mismatches'
+    )
+    parser.add_argument(
+        '--verbose', '-v', action='store_true',
+        help='Show detailed output for all checks'
+    )
+    parser.add_argument(
+        '--config', default='config.yaml',
+        help='Path to config.yaml file (default: config.yaml)'
+    )
+    parser.add_argument(
+        '--stats', action='store_true',
+        help='Show repository statistics'
+    )
     
     args = parser.parse_args()
     
     # Check if config file exists
     if not os.path.exists(args.config):
         print(f"Error: Config file '{args.config}' not found")
-        sys.exit(1)
+        return 1
     
     # Load config
     try:
-        with open(args.config, 'r', encoding='utf-8') as f:
-            config = yaml.safe_load(f)
+        config = load_yaml_file(args.config)
     except Exception as e:
         print(f"Error loading {args.config}: {e}")
-        sys.exit(1)
+        return 1
     
     print(f"Validating files referenced in {args.config}...")
     if not PYPDF2_AVAILABLE:
@@ -270,18 +376,22 @@ def main():
     print(f"Found {len(files)} file references")
     
     # Validate files
-    missing_files, invalid_files, page_mismatches = validate_files(files, args.verbose)
+    missing_files, invalid_files, page_mismatches = validate_config_files(files, args.verbose)
     
     # Print results
-    success = print_results(missing_files, invalid_files, page_mismatches, len(files))
+    success = print_config_results(missing_files, invalid_files, page_mismatches, len(files))
+    
+    # Show statistics if requested
+    if args.stats:
+        generate_summary_stats(config)
     
     # Fix pages if requested
     if args.fix_pages and page_mismatches:
         if update_config_with_actual_pages(args.config, page_mismatches):
             print("\n✅ Config file updated! Please review the changes and commit if appropriate.")
     
-    # Exit with appropriate code
-    sys.exit(0 if success else 1)
+    return 0 if success else 1
 
-if __name__ == '__main__':
-    main()
+
+if __name__ == "__main__":
+    sys.exit(main())
