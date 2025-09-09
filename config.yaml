@@ -19,25 +19,25 @@ ethernet:
   
   test_plans:
     - name: "1000BASE-T PMA Test Suite"
-      file: "test-plans/ethernet/1000BASE-T_PMA_Test_Suite_v2.6.pdf"
+      file: "testplans/ethernet/1000BASE-T_PMA_Test_Suite_v2.6.pdf"
       version: "2.6"
       description: "Physical Medium Attachment test suite for Gigabit Ethernet"
       pages: 83
     
     - name: "2.5G/5G PMA Test Plan"
-      file: "test-plans/ethernet/2.5G_5G_PMA_Test_Plan_v1.4.pdf"
+      file: "testplans/ethernet/2.5G_5G_PMA_Test_Plan_v1.4.pdf"
       version: "1.4"
       description: "Physical Medium Attachment test plan for 2.5G and 5G Ethernet"
       pages: 24
     
     - name: "Ethernet Interoperability"
-      file: "test-plans/ethernet/Ethernet_Interoperability_v3.0.pdf"
+      file: "testplans/ethernet/Ethernet_Interoperability_v3.0.pdf"
       version: "3.0"
       description: "Ethernet interoperability test suite"
       pages: 43
     
     - name: "PoDL PSE Conformance"
-      file: "test-plans/ethernet/PoDL_PSE_Conformance_v2.4.pdf"
+      file: "testplans/ethernet/PoDL_PSE_Conformance_v2.4.pdf"
       version: "2.4"
       description: "Power over Data Lines Power Sourcing Equipment conformance"
       pages: 52
@@ -69,19 +69,19 @@ switching:
   
   test_plans:
     - name: "802.1X Supplicant Conformance"
-      file: "test-plans/ethernet-switching/802.1X_Supplicant_Conformance.pdf"
+      file: "testplans/ethernet-switching/802.1X_Supplicant_Conformance.pdf"
       version: "N/A"
       description: "802.1X supplicant conformance testing"
       pages: 68
     
     - name: "VLAN Conformance"
-      file: "test-plans/ethernet-switching/VLAN_Conformance.pdf"
+      file: "testplans/ethernet-switching/VLAN_Conformance.pdf"
       version: "N/A"
       description: "Virtual LAN conformance testing"
       pages: 34
     
     - name: "MACsec Conformance"
-      file: "test-plans/ethernet-switching/MACsec_Conformance.pdf"
+      file: "testplans/ethernet-switching/MACsec_Conformance.pdf"
       version: "N/A"
       description: "Media Access Control Security conformance testing"
       pages: 37
@@ -91,25 +91,25 @@ fibre_channel:
   description: "Fibre Channel standards and test plans"
   test_plans:
     - name: "FC-PI-4 Clause 6 Optical"
-      file: "test-plans/fibre-channel/FC-PI-4_Clause_6_Optical_v1.0.pdf"
+      file: "testplans/fibre-channel/FC-PI-4_Clause_6_Optical_v1.0.pdf"
       version: "1.0"
       description: "Fibre Channel Physical Interface optical tests"
       pages: 21
     
     - name: "FC-PI-5 Clause 6 Optical"
-      file: "test-plans/fibre-channel/FC-PI-5_Clause_6_Optical_v2.0.pdf"
+      file: "testplans/fibre-channel/FC-PI-5_Clause_6_Optical_v2.0.pdf"
       version: "2.0"
       description: "Fibre Channel Physical Interface optical tests (Gen 5)"
       pages: 24
     
     - name: "Fabric Build Interoperability"
-      file: "test-plans/fibre-channel/Fabric_Build_Interop_v2.11.pdf"
+      file: "testplans/fibre-channel/Fabric_Build_Interop_v2.11.pdf"
       version: "2.11"
       description: "Fibre Channel fabric build interoperability tests"
       pages: 22
     
     - name: "VN2VN Port Test"
-      file: "test-plans/fibre-channel/VN2VN_Port_Test_v1.0.pdf"
+      file: "testplans/fibre-channel/VN2VN_Port_Test_v1.0.pdf"
       version: "1.0"
       description: "Virtual Node to Virtual Node port testing"
       pages: 22
@@ -119,19 +119,19 @@ ieee1588:
   description: "IEEE 1588 Precision Time Protocol test plans"
   test_plans:
     - name: "1588 Port Latency"
-      file: "test-plans/ieee1588/1588_Port_Latency_v1.0.0.pdf"
+      file: "testplans/ieee1588/1588_Port_Latency_v1.0.0.pdf"
       version: "1.0.0"
       description: "Port latency measurements for IEEE 1588"
       pages: 22
     
     - name: "Default PTP Profile Conformance"
-      file: "test-plans/ieee1588/Default_PTP_Profile_Conformance_v0.0.2.pdf"
+      file: "testplans/ieee1588/Default_PTP_Profile_Conformance_v0.0.2.pdf"
       version: "0.0.2"
       description: "Default Precision Time Protocol profile conformance"
       pages: 90
     
     - name: "Power Profile Test Plan"
-      file: "test-plans/ieee1588/Power_Profile_Test_Plan.pdf"
+      file: "testplans/ieee1588/Power_Profile_Test_Plan.pdf"
       version: "N/A"
       description: "Power profile test plan for IEEE 1588"
       pages: 189
@@ -166,22 +166,22 @@ ipv6:
   
   test_plans:
     - name: "DHCPv6 Conformance"
-      file: "test-plans/ipv6/DHCPv6_Conformance.pdf"
+      file: "testplans/ipv6/DHCPv6_Conformance.pdf"
       version: "N/A"
       description: "Dynamic Host Configuration Protocol for IPv6 conformance"
     
     - name: "IPv6 Address Architecture Conformance"
-      file: "test-plans/ipv6/IPv6_Address_Architecture_Conformance.pdf"
+      file: "testplans/ipv6/IPv6_Address_Architecture_Conformance.pdf"
       version: "N/A"
       description: "IPv6 address architecture conformance testing"
     
     - name: "IPv6 Core Protocols Conformance"
-      file: "test-plans/ipv6/IPv6_Core_Protocols_Conformance_v5.0.0.pdf"
+      file: "testplans/ipv6/IPv6_Core_Protocols_Conformance_v5.0.0.pdf"
       version: "5.0.0"
       description: "IPv6 core protocols conformance test suite"
     
     - name: "IPv6 Only Functional Test"
-      file: "test-plans/ipv6/IPv6_Only_Functional_Test.pdf"
+      file: "testplans/ipv6/IPv6_Only_Functional_Test.pdf"
       version: "N/A"
       description: "IPv6-only network functional testing"
 
@@ -215,12 +215,12 @@ iscsi:
   
   test_plans:
     - name: "Initiator Full Feature Phase"
-      file: "test-plans/iscsi/Initiator_Full_Feature_Phase.pdf"
+      file: "testplans/iscsi/Initiator_Full_Feature_Phase.pdf"
       version: "N/A"
       description: "iSCSI initiator full feature phase testing"
     
     - name: "Target Login Phase"
-      file: "test-plans/iscsi/Target_Login_Phase_v1.1.pdf"
+      file: "testplans/iscsi/Target_Login_Phase_v1.1.pdf"
       version: "1.1"
       description: "iSCSI target login phase testing"
 
@@ -560,14 +560,14 @@ wifi:
       pages: 90
     
     - name: "802.11 Wireless Interoperability"
-      file: "test-plans/wifi/802.11_Wireless_Interoperability.pdf"
+      file: "testplans/wifi/802.11_Wireless_Interoperability.pdf"
       version: "N/A"
       organization: "N/A"
       description: "802.11 wireless interoperability test plan"
       pages: 25
     
     - name: "WPA2 STA MAC Conformance"
-      file: "test-plans/wifi/WPA2_STA_MAC_Conformance_v2.4.pdf"
+      file: "testplans/wifi/WPA2_STA_MAC_Conformance_v2.4.pdf"
       version: "2.4"
       organization: "N/A"
       description: "WPA2 Station MAC conformance test plan"
@@ -735,5 +735,4 @@ stats:
 # File organization
 directories:
   specs: "Specification documents organized by technology"
-  test-plans: "Test plans organized by technology category"
-  testplans: "Additional test plans and miscellaneous documents"
+  testplans: "Test plans organized by technology category"
