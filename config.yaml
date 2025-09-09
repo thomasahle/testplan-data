@@ -11,11 +11,12 @@ ethernet:
   description: "Ethernet standards and test plans"
   specs:
     - name: "IEEE 802.3bz-2016 (2.5G/5GBASE-T)"
-      file: "specs/ethernet/IEEE_802.3bz-2016_2.5_5GBASE-T.pdf"
+      file: "Available via IEEE Get Program"
       version: "2016"
       standard: "IEEE 802.3bz"
-      description: "2.5 and 5 Gigabit Ethernet over twisted pair"
-      pages: "N/A (file download error)"
+      description: "2.5 and 5 Gigabit Ethernet over twisted pair - Free download via IEEE Get Program"
+      url: "https://standards.ieee.org/ieee/802.3bz/6130/"
+      pages: "N/A (external document)"
   
   test_plans:
     - name: "1000BASE-T PMA Test Suite"
@@ -530,11 +531,11 @@ storage:
 usb:
   test_plans:
     - name: "USB Type-C Connectors & Cable Assemblies Compliance"
-      file: "testplans/USB_Type-C_Connectors_and_Cable_Assemblies_Compliance_Document_Rev_21b.pdf"
+      file: "testplans/USB_Type-C_Compliance_Document_Rev_2_1b_June_2021.pdf"
       version: "Rev 2.1b"
       organization: "USB-IF"
       description: "Mechanical/electrical compliance document for USB Type-C"
-      pages: "N/A (file download error)"
+      pages: 86
     
     - name: "USB Type-C Functional Test Specification"
       file: "testplans/USB_Type_C_Functional_Test_Specification_2021_05_20.pdf"
@@ -676,10 +677,11 @@ fips_security:
   description: "FIPS 140-3 and security certification test specifications"
   test_plans:
     - name: "NIST SP 800-140 FIPS 140-3 Derived Test Requirements"
-      file: "testplans/NIST_SP_800-140_FIPS_140-3_DTR.pdf"
+      file: "testplans/NIST_SP_800-140_DTR.pdf"
       version: "SP 800-140"
       organization: "NIST"
       description: "Test requirements used by CMVP labs for FIPS 140-3"
+      pages: 23
     
     - name: "FIPS 140-3 Implementation Guidance"
       file: "testplans/FIPS_140-3_IG.pdf"
@@ -713,11 +715,13 @@ pcie_storage:
   category: "connectivity"
   description: "PCIe and storage interface test specifications"
   test_plans:
-    - name: "Keysight PCIe Gen5 Methods of Implementation"
-      file: "testplans/Keysight_PCIe_Gen5_MOI.pdf"
-      version: "N/A"
+    - name: "Keysight D9050PCIC PCIe Gen5 Methods of Implementation"
+      file: "Available from Keysight (requires registration)"
+      version: "Latest"
       organization: "Keysight"
-      description: "Methods of Implementation for PCIe Gen5 compliance testing"
+      description: "Methods of Implementation for D9050PCIC PCIe Gen5 compliance test software"
+      url: "https://www.keysight.com/us/en/assets/9922-01254/reference-guides/D9050PCIC-PCIeGen5-Test-Software-MOI-latest.pdf"
+      pages: "N/A (external document)"
     
     - name: "Protocol Insight UFS Methods of Implementation"
       file: "testplans/Protocol_Insight_UFS_MOI_v2.21.pdf"
