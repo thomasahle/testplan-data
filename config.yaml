@@ -362,7 +362,7 @@ nvme:
         version: "1.2"
         standard: "NVM Express"
         description: "NVM Command Set specification for NVMe devices"
-        pages: 136
+        pages: 158
         ratified: "2025-08-01"
     test_plans:
       # Note: Main NVM Command Set conformance test plan is the 496-page plan mentioned by user but not yet downloaded
@@ -375,7 +375,7 @@ nvme:
         version: "1.4"
         standard: "NVM Express"
         description: "Zoned Namespace Command Set specification for zone-aware storage"
-        pages: 268
+        pages: 59
         ratified: "2025-08-01"
     test_plans:
       - name: "NVMe ZNS Command Set Conformance"
@@ -394,7 +394,7 @@ nvme:
         version: "1.2"
         standard: "NVM Express"
         description: "Subsystem Local Memory Command Set specification"
-        pages: 29
+        pages: 27
         ratified: "2025-08-01"
     test_plans:
       - name: "NVMe Subsystem Local Memory (SLM) Command Set Conformance"
@@ -413,7 +413,7 @@ nvme:
         version: "1.2"
         standard: "NVM Express"
         description: "Computational Programs Command Set specification for in-storage computing"
-        pages: 38
+        pages: 40
         ratified: "2025-08-01"
     test_plans:
       - name: "NVMe Computational Programs (CPS) Command Set Conformance"
@@ -433,7 +433,7 @@ nvme:
         version: "2.1"
         standard: "NVM Express"
         description: "NVMe Management Interface specification for out-of-band management"
-        pages: 178
+        pages: 210
         ratified: "2025-08-01"
     test_plans:
       - name: "NVMe-MI Conformance"
@@ -453,7 +453,7 @@ nvme:
         version: "1.3"
         standard: "NVM Express"
         description: "NVMe over PCIe transport binding specification"
-        pages: 55
+        pages: 44
         ratified: "2025-08-01"
     test_plans:
       - name: "NVMe PCIe Transport Conformance"
@@ -479,7 +479,7 @@ nvme:
         version: "1.1a"
         standard: "NVM Express"
         description: "NVMe over Fabrics specification for fabric transport bindings"
-        pages: 115
+        pages: 84
         ratified: "2021-07-12"
     test_plans:
       - name: "NVMe RDMA Transport Conformance"
