@@ -589,15 +589,7 @@ devices:
             pages: 158
             ratified: '2025-08-01'
             access: local
-          test_plans:
-          - name: NVM Command Set Conformance
-            file: testplans/UNH-IOL_NVM_Command_Set_Conformance_v23.0_2025.01.19.pdf
-            version: '23.0'
-            organization: UNH-IOL
-            last_updated: '2025-01-19'
-            pages: 496
-            description: NVM Command Set conformance test plan
-            access: local
+          test_plans: []
         zns_command_set:
           specs:
           - name: Zoned Namespace Command Set Specification Rev 1.4
