@@ -534,18 +534,21 @@ usb:
       version: "Rev 2.1b"
       organization: "USB-IF"
       description: "Mechanical/electrical compliance document for USB Type-C"
+      pages: "N/A (file download error)"
     
     - name: "USB Type-C Functional Test Specification"
       file: "testplans/USB_Type_C_Functional_Test_Specification_2021_05_20.pdf"
       version: "2021-05-20"
       organization: "USB-IF"
       description: "Functional test procedures for USB Type-C"
+      pages: 132
     
     - name: "USB Power Delivery Compliance Test Specification"
       file: "testplans/USB_PD3_CTS_r1.4_V5_OR.pdf"
       version: "PD3 CTS r1.4 V5"
       organization: "USB-IF"
       description: "Official Power Delivery conformance test plan"
+      pages: 301
 
 wifi:
   test_plans:
@@ -554,18 +557,21 @@ wifi:
       version: "TR-398 Issue 3.0.1"
       organization: "Broadband Forum"
       description: "Wi-Fi performance testing for residential and small office environments"
+      pages: 90
     
     - name: "802.11 Wireless Interoperability"
       file: "test-plans/wifi/802.11_Wireless_Interoperability.pdf"
       version: "N/A"
       organization: "N/A"
       description: "802.11 wireless interoperability test plan"
+      pages: 25
     
     - name: "WPA2 STA MAC Conformance"
       file: "test-plans/wifi/WPA2_STA_MAC_Conformance_v2.4.pdf"
       version: "2.4"
       organization: "N/A"
       description: "WPA2 Station MAC conformance test plan"
+      pages: 52
 
 lorawan:
   test_plans:
@@ -574,12 +580,14 @@ lorawan:
       version: "TS009-1.0.0"
       organization: "LoRa Alliance"
       description: "Test harness protocol and certification flow for LoRaWAN"
+      pages: 20
     
     - name: "LoRaWAN 1.0.4 End Device Certification"
       file: "testplans/LW1.0.4_End_Device_Certification_V1.0.pdf"
       version: "1.0"
       organization: "LoRa Alliance"
       description: "End device certification requirements for LoRaWAN 1.0.4"
+      pages: 162
 
 onvif:
   test_plans:
@@ -633,6 +641,7 @@ ethernet_poe:
       version: "Gen1/Gen2"
       organization: "Ethernet Alliance"
       description: "Power over Ethernet certification test plan based on IEEE 802.3af/at/bt"
+      pages: 72
 
 automotive_ethernet:
   category: "automotive"
@@ -643,12 +652,14 @@ automotive_ethernet:
       version: "3.0"
       organization: "OPEN Alliance"
       description: "ECU test specification for Layer 1 100BASE-T1 automotive ethernet"
+      pages: 29
     
     - name: "Automotive Ethernet ECU Test Specification Layer 3-7"
       file: "testplans/OA_Automotive_Ethernet_ECU_TestSpecification_Layer_3-7_v3.0.pdf"
       version: "3.0"
       organization: "OPEN Alliance"
       description: "ECU test specification for Layer 3-7 automotive ethernet"
+      pages: 664
 
 khronos:
   category: "graphics"
