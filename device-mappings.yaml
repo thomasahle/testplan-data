@@ -1,0 +1,350 @@
+devices:
+  # Ethernet Standards
+  - id: ieee-802.3bz-2016
+    name: "2.5G/5G BASE-T Ethernet"
+    category: "Ethernet"
+    specs:
+      - path: "specs/ethernet/IEEE_802.3bz-2016_2.5_5GBASE-T.pdf"
+        standard: "IEEE 802.3bz-2016"
+        description: "2.5GBASE-T and 5GBASE-T specification"
+    test_plans:
+      - path: "test-plans/ethernet/2.5G_5G_PMA_Test_Plan_v1.4.pdf"
+        type: "PMA Conformance"
+        version: "v1.4"
+
+  # Switching/Security Standards
+  - id: ieee-802.1x-2020
+    name: "Port-Based Network Access Control"
+    category: "Switching/Security"
+    specs:
+      - path: "specs/switching/IEEE_802.1X-2020.pdf"
+        standard: "IEEE 802.1X-2020"
+        description: "Port-Based Network Access Control"
+    test_plans:
+      - path: "test-plans/ethernet-switching/802.1X_Supplicant_Conformance.pdf"
+        type: "Supplicant Conformance"
+
+  - id: ieee-802.1ae-2018
+    name: "Media Access Control Security (MACsec)"
+    category: "Switching/Security"
+    specs:
+      - path: "specs/switching/IEEE_802.1AE-2018_MACsec.pdf"
+        standard: "IEEE 802.1AE-2018"
+        description: "Media Access Control Security"
+    test_plans:
+      - path: "test-plans/ethernet-switching/MACsec_Conformance.pdf"
+        type: "MACsec Conformance"
+
+  - id: ieee-802.1q-2022
+    name: "Virtual LANs"
+    category: "Switching/Security"
+    specs:
+      - path: "specs/switching/IEEE_802.1Q-2022_Preview.pdf"
+        standard: "IEEE 802.1Q-2022"
+        description: "Virtual LANs (VLAN) standard"
+    test_plans:
+      - path: "test-plans/ethernet-switching/VLAN_Conformance.pdf"
+        type: "VLAN Conformance"
+
+  # WiFi Standards
+  - id: ieee-802.11-2020
+    name: "Wireless LAN Medium Access Control and Physical Layer"
+    category: "WiFi"
+    specs:
+      - path: "specs/wifi/IEEE_802.11-2020_Preview.pdf"
+        standard: "IEEE 802.11-2020"
+        description: "Wireless LAN MAC and PHY specification"
+    test_plans:
+      - path: "test-plans/wifi/802.11_Wireless_Interoperability.pdf"
+        type: "Interoperability"
+      - path: "test-plans/wifi/WPA2_STA_MAC_Conformance_v2.4.pdf"
+        type: "WPA2 STA MAC Conformance"
+        version: "v2.4"
+
+  # IPv6 Standards
+  - id: rfc-8200-ipv6
+    name: "Internet Protocol Version 6 (IPv6)"
+    category: "IPv6"
+    specs:
+      - path: "specs/ipv6/RFC8200_IPv6_Specification.txt"
+        standard: "RFC 8200"
+        description: "Internet Protocol Version 6 Specification"
+    test_plans:
+      - path: "test-plans/ipv6/IPv6_Core_Protocols_Conformance_v5.0.0.pdf"
+        type: "Core Protocols Conformance"
+        version: "v5.0.0"
+
+  - id: rfc-8415-dhcpv6
+    name: "Dynamic Host Configuration Protocol for IPv6 (DHCPv6)"
+    category: "IPv6"
+    specs:
+      - path: "specs/ipv6/RFC8415_DHCPv6.txt"
+        standard: "RFC 8415"
+        description: "Dynamic Host Configuration Protocol for IPv6"
+    test_plans:
+      - path: "test-plans/ipv6/DHCPv6_Conformance.pdf"
+        type: "DHCPv6 Conformance"
+
+  # iSCSI Standards
+  - id: rfc-7143-iscsi
+    name: "Internet Small Computer Systems Interface (iSCSI)"
+    category: "Storage"
+    specs:
+      - path: "specs/iscsi/RFC7143_iSCSI_Protocol.pdf"
+        standard: "RFC 7143"
+        description: "Internet Small Computer Systems Interface Protocol"
+        format: "PDF"
+      - path: "specs/iscsi/RFC7143_iSCSI_Protocol.txt"
+        standard: "RFC 7143"
+        description: "Internet Small Computer Systems Interface Protocol"
+        format: "Text"
+    test_plans:
+      - path: "test-plans/iscsi/Initiator_Full_Feature_Phase.pdf"
+        type: "Initiator Full Feature Phase"
+      - path: "test-plans/iscsi/Target_Login_Phase_v1.1.pdf"
+        type: "Target Login Phase"
+        version: "v1.1"
+
+# Additional IPv6 related specs (with partial test coverage)
+  - id: rfc-4861-ipv6-nd
+    name: "IPv6 Neighbor Discovery Protocol"
+    category: "IPv6"
+    specs:
+      - path: "specs/ipv6/RFC4861_IPv6_Neighbor_Discovery.txt"
+        standard: "RFC 4861"
+        description: "Neighbor Discovery for IP version 6"
+    test_plans:
+      - path: "test-plans/ipv6/IPv6_Address_Architecture_Conformance.pdf"
+        type: "Address Architecture Conformance"
+        note: "Partially covers neighbor discovery"
+
+  - id: rfc-4862-ipv6-slaac
+    name: "IPv6 Stateless Address Autoconfiguration"
+    category: "IPv6"
+    specs:
+      - path: "specs/ipv6/RFC4862_IPv6_SLAAC.txt"
+        standard: "RFC 4862"
+        description: "IPv6 Stateless Address Autoconfiguration"
+    test_plans:
+      - path: "test-plans/ipv6/IPv6_Only_Functional_Test.pdf"
+        type: "IPv6 Only Functional Test"
+        note: "Includes SLAAC testing"
+
+# Orphaned specs (specs without matching test plans)
+orphaned_specs:
+  - path: "specs/auth/OAuth_2.0_RFC6749.txt"
+    standard: "RFC 6749"
+    description: "OAuth 2.0 Authorization Framework"
+    category: "Authentication"
+    
+  - path: "specs/lorawan/LoRaWAN_L2_1.0.4.pdf"
+    standard: "LoRaWAN L2 v1.0.4"
+    description: "LoRaWAN Layer 2 specification"
+    category: "IoT"
+    
+  - path: "specs/nvme/NVM-Express-Computational-Programs-Command-Set-Specification-Revision-1.2-2025.08.01-Ratified.pdf"
+    standard: "NVMe Computational Programs v1.2"
+    description: "NVMe Computational Programs Command Set"
+    category: "Storage"
+    
+  - path: "specs/nvme/NVM-Express-Management-Interface-Specification-Revision-2.1-2025.08.01-Ratified.pdf"
+    standard: "NVMe Management Interface v2.1"
+    description: "NVMe Management Interface"
+    category: "Storage"
+    
+  - path: "specs/nvme/NVM-Express-NVM-Command-Set-Specification-Revision-1.2-2025.08.01-Ratified.pdf"
+    standard: "NVMe NVM Command Set v1.2"
+    description: "NVMe NVM Command Set"
+    category: "Storage"
+    
+  - path: "specs/nvme/NVM-Express-NVMe-over-PCIe-Transport-Specification-Revision-1.3-2025.08.01-Ratified.pdf"
+    standard: "NVMe over PCIe v1.3"
+    description: "NVMe over PCIe Transport"
+    category: "Storage"
+    
+  - path: "specs/nvme/NVM-Express-Subsystem-Local-Memory-Command-Set-Specification-Revision-1.2-2025.08.01-Ratified.pdf"
+    standard: "NVMe Subsystem Local Memory v1.2"
+    description: "NVMe Subsystem Local Memory Command Set"
+    category: "Storage"
+    
+  - path: "specs/nvme/NVM-Express-Zoned-Namespace-Command-Set-Specification-Revision-1.4-2025.08.01-Ratified.pdf"
+    standard: "NVMe Zoned Namespace v1.4"
+    description: "NVMe Zoned Namespace Command Set"
+    category: "Storage"
+    
+  - path: "specs/nvme/NVMe-over-Fabrics-1.1a-2021.07.12-Ratified.pdf"
+    standard: "NVMe over Fabrics v1.1a"
+    description: "NVMe over Fabrics"
+    category: "Storage"
+    
+  - path: "specs/onvif/ONVIF_Core_Specification.pdf"
+    standard: "ONVIF Core"
+    description: "Open Network Video Interface Forum Core Specification"
+    category: "Video/Surveillance"
+    
+  - path: "specs/ptp-profiles/IEEE_1588-2019_changes.pdf"
+    standard: "IEEE 1588-2019"
+    description: "Precision Time Protocol changes"
+    category: "Timing"
+    
+  - path: "specs/rdma/RFC5040_RDMAP.txt"
+    standard: "RFC 5040"
+    description: "Remote Direct Memory Access Protocol"
+    category: "RDMA"
+    
+  - path: "specs/rdma/RFC5041_DDP.txt"
+    standard: "RFC 5041"
+    description: "Direct Data Placement Protocol"
+    category: "RDMA"
+    
+  - path: "specs/rdma/RFC5044_MPA.txt"
+    standard: "RFC 5044"
+    description: "Marker PDU Aligned Framing for TCP"
+    category: "RDMA"
+    
+  - path: "specs/redfish/DMTF_Redfish_DSP0266_v1.20.1.pdf"
+    standard: "DMTF Redfish v1.20.1"
+    description: "Redfish Scalable Platforms Management API"
+    category: "Management"
+    
+  - path: "specs/sdn/OpenFlow_Switch_v1.3.5.pdf"
+    standard: "OpenFlow v1.3.5"
+    description: "OpenFlow Switch Specification"
+    category: "SDN"
+    
+  - path: "specs/storage/SNIA_SSS_PTS_v2.0.2.pdf"
+    standard: "SNIA SSS PTS v2.0.2"
+    description: "SNIA Solid State Storage Performance Test Specification"
+    category: "Storage"
+    
+  - path: "specs/storage/TCG_Opal_SSC_v2.02_r1.00.pdf"
+    standard: "TCG Opal SSC v2.02"
+    description: "Trusted Computing Group Opal Security Subsystem Class"
+    category: "Storage/Security"
+    
+  - path: "specs/usb/USB_PD_R3.0_V1.1.pdf"
+    standard: "USB PD R3.0 V1.1"
+    description: "USB Power Delivery specification"
+    category: "USB"
+    
+  - path: "specs/usb/USB_Type-C_Spec_R2.0.pdf"
+    standard: "USB Type-C R2.0"
+    description: "USB Type-C Cable and Connector specification"
+    category: "USB"
+    
+  - path: "specs/iscsi/RFC7144_iSCSI_SAM.txt"
+    standard: "RFC 7144"
+    description: "Internet Small Computer Systems Interface SCSI Architecture Model"
+    category: "Storage"
+    
+  - path: "specs/iscsi/RFC7145_iSER_RDMA.txt"
+    standard: "RFC 7145"
+    description: "Internet Small Computer Systems Interface Extensions for RDMA"
+    category: "Storage"
+
+# Orphaned test plans (test plans without matching specs)
+orphaned_test_plans:
+  - path: "test-plans/ethernet/1000BASE-T_PMA_Test_Suite_v2.6.pdf"
+    type: "1000BASE-T PMA Conformance"
+    version: "v2.6"
+    category: "Ethernet"
+    note: "Missing 1000BASE-T spec"
+    
+  - path: "test-plans/ethernet/Ethernet_Interoperability_v3.0.pdf"
+    type: "Ethernet Interoperability"
+    version: "v3.0"
+    category: "Ethernet"
+    note: "General interoperability testing"
+    
+  - path: "test-plans/ethernet/PoDL_PSE_Conformance_v2.4.pdf"
+    type: "Power over Data Lines PSE Conformance"
+    version: "v2.4"
+    category: "Ethernet/Power"
+    note: "Missing PoDL PSE spec"
+    
+  - path: "test-plans/fibre-channel/FC-PI-4_Clause_6_Optical_v1.0.pdf"
+    type: "FC-PI-4 Clause 6 Optical"
+    version: "v1.0"
+    category: "Fibre Channel"
+    note: "Missing FC-PI-4 spec"
+    
+  - path: "test-plans/fibre-channel/FC-PI-5_Clause_6_Optical_v2.0.pdf"
+    type: "FC-PI-5 Clause 6 Optical"
+    version: "v2.0"
+    category: "Fibre Channel"
+    note: "Missing FC-PI-5 spec"
+    
+  - path: "test-plans/fibre-channel/Fabric_Build_Interop_v2.11.pdf"
+    type: "Fabric Build Interoperability"
+    version: "v2.11"
+    category: "Fibre Channel"
+    note: "Fabric interoperability testing"
+    
+  - path: "test-plans/fibre-channel/VN2VN_Port_Test_v1.0.pdf"
+    type: "VN2VN Port Test"
+    version: "v1.0"
+    category: "Fibre Channel"
+    note: "VN2VN port testing"
+    
+  - path: "test-plans/gpon/GPON_TR156_Dual_Mode_ONU_v1.pdf"
+    type: "GPON TR156 Dual Mode ONU"
+    version: "v1"
+    category: "PON"
+    note: "Missing GPON TR156 spec"
+    
+  - path: "test-plans/gpon/PON_Integrator_Test_Plan.pdf"
+    type: "PON Integrator Test Plan"
+    category: "PON"
+    note: "General PON integrator testing"
+    
+  - path: "test-plans/ieee1588/1588_Port_Latency_v1.0.0.pdf"
+    type: "IEEE 1588 Port Latency"
+    version: "v1.0.0"
+    category: "Timing"
+    note: "Missing IEEE 1588 spec"
+    
+  - path: "test-plans/ieee1588/Default_PTP_Profile_Conformance_v0.0.2.pdf"
+    type: "Default PTP Profile Conformance"
+    version: "v0.0.2"
+    category: "Timing"
+    note: "Missing default PTP profile spec"
+    
+  - path: "test-plans/ieee1588/Power_Profile_Test_Plan.pdf"
+    type: "Power Profile Test Plan"
+    category: "Timing"
+    note: "Missing power profile spec"
+    
+  - path: "test-plans/open-networking/OFA_IWG_Interoperability_v1.16.pdf"
+    type: "OFA IWG Interoperability"
+    version: "v1.16"
+    category: "Open Networking"
+    note: "Open Fabrics Alliance interoperability"
+    
+  - path: "test-plans/open-networking/Open_Network_Systems_Layer1_Interop_Rev37.pdf"
+    type: "Open Network Systems Layer1 Interoperability"
+    version: "Rev37"
+    category: "Open Networking"
+    note: "Layer 1 interoperability testing"
+
+# Summary statistics
+summary:
+  total_devices_with_both: 10  # devices with both specs and test plans
+  total_orphaned_specs: 23      # specs without test plans
+  total_orphaned_test_plans: 14 # test plans without specs
+  categories:
+    - "Ethernet"
+    - "Switching/Security"  
+    - "WiFi"
+    - "IPv6"
+    - "Storage"
+    - "Authentication"
+    - "IoT"
+    - "Video/Surveillance"
+    - "Timing"
+    - "RDMA"
+    - "Management"
+    - "SDN"
+    - "USB"
+    - "Fibre Channel"
+    - "PON"
+    - "Open Networking"
